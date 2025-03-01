@@ -1,3 +1,4 @@
+
 import React from "react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
@@ -19,7 +20,7 @@ const Index: React.FC = () => {
         <Navbar />
       </header>
 
-      <main>
+      <main className="pt-[70px]">
         <HeroSection />
         <UnlockPowerSection />
         <FeatureCardsSection />
@@ -29,21 +30,23 @@ const Index: React.FC = () => {
         <UnlockFullPotentialSection />
         <JourneySection />
 
-        <section className="bg-white py-16 px-5 md:px-20">
-          <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-semibold mb-6">
-                Get in Touch
-              </h2>
-              <p className="text-[rgba(119,117,120,1)] mb-8">
-                Have questions about our AI-powered Python backend solutions?
-                Reach out to our team of experts and discover how we can help
-                transform your business.
-              </p>
-              <ContactForm />
-            </div>
-            <div className="flex flex-col justify-center">
-              <NewsletterSignup />
+        <section className="bg-white py-16 px-6 sm:px-10 md:px-16 lg:px-20 xl:px-28 w-full">
+          <div className="max-w-7xl mx-auto">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-center mb-16 fade-in">
+              Get in Touch
+            </h2>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+              <div>
+                <p className="text-[rgba(119,117,120,1)] mb-8 fade-in" style={{animationDelay: "0.1s"}}>
+                  Have questions about our AI-powered Python backend solutions?
+                  Reach out to our team of experts and discover how we can help
+                  transform your business.
+                </p>
+                <ContactForm />
+              </div>
+              <div className="flex flex-col justify-center h-full pt-10 lg:pt-0">
+                <NewsletterSignup />
+              </div>
             </div>
           </div>
         </section>

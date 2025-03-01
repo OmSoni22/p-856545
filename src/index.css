@@ -120,6 +120,10 @@
     @apply animate-[slideInRight_0.5s_ease-out];
   }
   
+  .slide-in-top {
+    @apply animate-[slideInTop_0.5s_ease-out];
+  }
+  
   .scale-in {
     @apply animate-[scaleIn_0.4s_cubic-bezier(0.175,0.885,0.32,1.275)];
   }
@@ -179,6 +183,17 @@
   }
   to {
     transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInTop {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
     opacity: 1;
   }
 }

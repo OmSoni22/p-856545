@@ -1,33 +1,41 @@
+
 import React from "react";
 import Button from "../ui/Button";
+
 const HeroSection: React.FC = () => {
-  return <section className="bg-white flex mt-[-70px] w-full max-w-[1373px] flex-col items-stretch justify-center max-md:max-w-full py-[100px] px-[110px] my-0 rounded-none mx-0">
-      <div className="w-full max-md:max-w-full">
-        <div className="gap-8 flex max-md:flex-col max-md:items-stretch">
-          <div className="w-6/12 max-md:w-full max-md:ml-0">
-            <div className="flex flex-col self-stretch items-stretch font-semibold my-auto max-md:max-w-full max-md:mt-10">
-              <h1 className="text-[rgba(22,21,23,1)] text-[71px] leading-[86px] max-md:max-w-full max-md:text-[40px] max-md:leading-[54px] slide-in-left">
+  return (
+    <section className="bg-white flex w-full flex-col items-stretch justify-center py-20 px-6 sm:px-10 md:px-16 lg:px-20 xl:px-28 mt-0 relative overflow-hidden">
+      <div className="w-full max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+          <div className="order-2 md:order-1">
+            <div className="flex flex-col items-stretch font-semibold">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl leading-tight text-[rgba(22,21,23,1)] mb-6 slide-in-left">
                 Building a Successful AI-Powered Python Backend
               </h1>
-              <p className="text-[rgba(156,163,171,1)] text-xl font-medium leading-[35px] mr-6 mt-[31px] max-md:max-w-full max-md:mr-2.5 slide-in-left" style={{
-              animationDelay: "0.2s"
-            }}>
+              <p className="text-lg md:text-xl text-[rgba(156,163,171,1)] font-medium leading-relaxed mb-8 slide-in-left" style={{ animationDelay: "0.2s" }}>
                 As an AI Python Backend Developer, you have the unique
                 opportunity to harness the power of cutting-edge technologies to
                 revolutionize the way applications are built and deployed
               </p>
-              <Button variant="primary" style={{
-              animationDelay: "0.4s"
-            }} className="mt-[63px] pt-3.5 pb-[26px] px-9 max-md:mt-10 max-md:px-5 slide-in-bottom hover-scale py-[10px]">
+              <Button 
+                variant="primary" 
+                className="self-start mt-4 slide-in-bottom hover-scale" 
+                style={{ animationDelay: "0.4s" }}>
                 Get Started
               </Button>
             </div>
           </div>
-          <div className="w-6/12 ml-5 max-md:w-full max-md:ml-0">
-            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/3600cd9dc09d7dd9621367c455b311cd99ccee5d6b11f0cd4632b76c7de19737?placeholderIfAbsent=true" alt="AI Python Backend Development" className="aspect-[0.86] object-contain w-full grow max-md:max-w-full max-md:mt-[26px] scale-in" />
+          <div className="order-1 md:order-2">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/3600cd9dc09d7dd9621367c455b311cd99ccee5d6b11f0cd4632b76c7de19737?placeholderIfAbsent=true"
+              alt="AI Python Backend Development"
+              className="w-full h-auto object-contain scale-in"
+            />
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default HeroSection;

@@ -1,83 +1,67 @@
+
 import React from "react";
 import { Link } from "react-router-dom";
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-white flex w-full gap-[40px_100px] text-base text-[rgba(135,132,134,1)] font-normal justify-center flex-wrap pt-[120px] pb-20 px-[100px] max-md:max-w-full max-md:pt-[100px] max-md:px-5">
-      <div className="leading-4">
-        <img
-          src="https://cdn.builder.io/api/v1/image/assets/TEMP/937f1d6725c283fe2cea402c73e734441f43ffd3d7df03702cc114dcbe3dd52d?placeholderIfAbsent=true"
-          alt="Pythoneer Logo"
-          className="aspect-[1] object-contain w-24"
-        />
-        <div className="mt-10">
-          © 2025 Pythoneer, Inc.
-          <br />
-          All rights reserved.
+    <footer className="bg-white w-full pt-16 sm:pt-20 md:pt-24 pb-10 sm:pb-12 md:pb-16 px-6 sm:px-10 md:px-16 lg:px-20 xl:px-28">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div className="space-y-6 fade-in">
+          <img
+            src="https://cdn.builder.io/api/v1/image/assets/TEMP/937f1d6725c283fe2cea402c73e734441f43ffd3d7df03702cc114dcbe3dd52d?placeholderIfAbsent=true"
+            alt="Pythoneer Logo"
+            className="w-20 h-20 object-contain"
+          />
+          <div className="text-[rgba(135,132,134,1)]">
+            © 2025 Pythoneer, Inc.
+            <br />
+            All rights reserved.
+          </div>
         </div>
-      </div>
-      <div className="flex min-w-60 items-center gap-[30px] whitespace-nowrap leading-none flex-wrap flex-1 shrink basis-[0%] max-md:max-w-full">
-        <div className="self-stretch min-w-60 flex-1 shrink basis-[0%] my-auto">
-          <div className="text-[15px] font-semibold">Company</div>
-          <Link
-            to="/"
-            className="block mt-5 hover:text-black transition-colors"
-          >
-            Home
-          </Link>
-          <Link
-            to="/about"
-            className="block mt-5 hover:text-black transition-colors"
-          >
-            About
-          </Link>
-          <Link
-            to="/products"
-            className="block mt-5 hover:text-black transition-colors"
-          >
-            Products
-          </Link>
-          <Link
-            to="/contact"
-            className="block mt-5 hover:text-black transition-colors"
-          >
-            Contact
-          </Link>
+        
+        <div className="fade-in" style={{animationDelay: "0.1s"}}>
+          <h3 className="text-base font-semibold mb-4">Company</h3>
+          <div className="space-y-3 text-[rgba(135,132,134,1)]">
+            <Link to="/" className="block hover:text-black transition-colors">
+              Home
+            </Link>
+            <Link to="/about" className="block hover:text-black transition-colors">
+              About
+            </Link>
+            <Link to="/products" className="block hover:text-black transition-colors">
+              Products
+            </Link>
+            <Link to="/contact" className="block hover:text-black transition-colors">
+              Contact
+            </Link>
+          </div>
         </div>
-        <div className="self-stretch min-w-60 flex-1 shrink basis-[0%] my-auto">
-          <div className="text-[15px] font-semibold">Resources</div>
-          <Link
-            to="/tutorials"
-            className="block mt-5 hover:text-black transition-colors"
-          >
-            Tutorials
-          </Link>
-          <Link
-            to="/guides"
-            className="block mt-5 hover:text-black transition-colors"
-          >
-            Guides
-          </Link>
-          <Link
-            to="/webinars"
-            className="block mt-5 hover:text-black transition-colors"
-          >
-            Webinars
-          </Link>
-          <Link
-            to="/blog"
-            className="block mt-5 hover:text-black transition-colors"
-          >
-            Blog
-          </Link>
+        
+        <div className="fade-in" style={{animationDelay: "0.2s"}}>
+          <h3 className="text-base font-semibold mb-4">Resources</h3>
+          <div className="space-y-3 text-[rgba(135,132,134,1)]">
+            <Link to="/tutorials" className="block hover:text-black transition-colors">
+              Tutorials
+            </Link>
+            <Link to="/guides" className="block hover:text-black transition-colors">
+              Guides
+            </Link>
+            <Link to="/webinars" className="block hover:text-black transition-colors">
+              Webinars
+            </Link>
+            <Link to="/blog" className="block hover:text-black transition-colors">
+              Blog
+            </Link>
+          </div>
         </div>
-        <div className="self-stretch min-w-60 text-[15px] font-semibold flex-1 shrink basis-[0%] my-auto">
-          <div className="mb-5">Connect</div>
+        
+        <div className="fade-in" style={{animationDelay: "0.3s"}}>
+          <h3 className="text-base font-semibold mb-4">Connect</h3>
           <div className="flex gap-4">
             <a
               href="https://twitter.com"
               aria-label="Twitter"
-              className="hover:opacity-80 transition-opacity"
+              className="hover:opacity-80 transition-opacity hover-scale"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -96,7 +80,7 @@ const Footer: React.FC = () => {
             <a
               href="https://linkedin.com"
               aria-label="LinkedIn"
-              className="hover:opacity-80 transition-opacity"
+              className="hover:opacity-80 transition-opacity hover-scale"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -117,7 +101,7 @@ const Footer: React.FC = () => {
             <a
               href="https://github.com"
               aria-label="GitHub"
-              className="hover:opacity-80 transition-opacity"
+              className="hover:opacity-80 transition-opacity hover-scale"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"

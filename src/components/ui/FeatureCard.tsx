@@ -20,9 +20,8 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
   return (
     <div
       className={cn(
-        "flex flex-col items-center text-center hover-lift p-6",
-        bordered && "border border-solid rounded-[46px] pb-[38px] px-[39px] shadow-sm",
-        "scale-in",
+        "flex flex-col items-center text-center p-6 md:p-8 h-full transition-all duration-300 hover-lift scale-in",
+        bordered && "border border-solid rounded-[46px] shadow-sm",
         className,
       )}
     >
@@ -30,14 +29,16 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
         <img
           src={icon}
           alt={title}
-          className="aspect-square object-contain w-[81px] pop-in"
+          className="w-16 sm:w-20 aspect-square object-contain mb-6 pop-in"
         />
       )}
-      <h3 className="text-[rgba(53,52,53,1)] text-[27px] font-semibold leading-[34px] mt-8 slide-in-bottom">
+      <h3 className="text-xl sm:text-2xl md:text-[27px] font-semibold leading-tight text-[rgba(53,52,53,1)] mb-4 slide-in-bottom">
         {title}
       </h3>
-      <p className="text-[rgba(119,116,120,1)] text-[17px] font-normal leading-[27px] self-stretch mt-4 slide-in-bottom" 
-         style={{animationDelay: "0.1s"}}>
+      <p 
+        className="text-base md:text-lg text-[rgba(119,116,120,1)] font-normal leading-relaxed slide-in-bottom" 
+        style={{animationDelay: "0.1s"}}
+      >
         {description}
       </p>
     </div>

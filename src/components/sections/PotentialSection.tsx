@@ -1,32 +1,44 @@
+
 import React from "react";
 import Button from "../ui/Button";
+
 const PotentialSection: React.FC = () => {
-  return <section className="bg-white flex w-full flex-col items-center justify-center px-[70px] py-[118px] max-md:max-w-full max-md:pt-[100px] max-md:px-5">
-      <div className="w-full max-w-[1198px] max-md:max-w-full">
-        <div className="gap-5 flex max-md:flex-col max-md:items-stretch">
-          <div className="w-[44%] max-md:w-full max-md:ml-0">
-            <div className="flex flex-col items-stretch text-xl font-semibold leading-[1.2] mt-32 max-md:max-w-full max-md:mt-10">
-              <h2 className="text-[rgba(31,29,31,1)] text-[54px] leading-[62px] max-md:max-w-full max-md:text-[40px] max-md:leading-[51px] max-md:mr-2.5">
+  return (
+    <section className="bg-white py-16 sm:py-20 md:py-24 px-6 sm:px-10 md:px-16 lg:px-20 xl:px-28 w-full">
+      <div className="max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          <div className="order-2 lg:order-1">
+            <div className="space-y-6 md:space-y-8">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-[rgba(31,29,31,1)] leading-tight slide-in-left">
                 Unlocking the Full Potential of AI and Python for Your Business
               </h2>
-              <p className="text-[rgba(109,108,111,1)] font-medium leading-[31px] mt-6 max-md:max-w-full">
+              <p className="text-lg md:text-xl text-[rgba(109,108,111,1)] font-medium leading-relaxed slide-in-left" style={{animationDelay: "0.1s"}}>
                 As an AI Python Backend Developer, you possess the unique
                 ability to harness the power of cutting-edge technologies to
                 revolutionize the way businesses operate
               </p>
-              <div className="text-[rgba(121,120,122,1)] text-[19px] font-medium mt-12 max-md:mt-10">
+              <div className="text-xl text-[rgba(121,120,122,1)] font-medium slide-in-left" style={{animationDelay: "0.2s"}}>
                 Discover More
               </div>
-              <Button variant="secondary" className="mt-[55px] pt-[11px] pb-[26px] px-[37px] rounded-[5px] max-md:mt-10 max-md:px-5 py-[10px]">
+              <Button 
+                variant="secondary" 
+                className="hover-scale slide-in-bottom"
+                style={{animationDelay: "0.3s"}}>
                 Join Now
               </Button>
             </div>
           </div>
-          <div className="w-[56%] ml-5 max-md:w-full max-md:ml-0">
-            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/8670b6fb02d3340c6707e7cafab4398fbcec17036cdcb3c0e3d1d5e61bc17bb6?placeholderIfAbsent=true" alt="AI and Python Potential" className="aspect-[0.93] object-contain w-full grow max-md:max-w-full max-md:mt-10" />
+          <div className="order-1 lg:order-2">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/8670b6fb02d3340c6707e7cafab4398fbcec17036cdcb3c0e3d1d5e61bc17bb6?placeholderIfAbsent=true"
+              alt="AI and Python Potential"
+              className="w-full h-auto object-contain rounded scale-in"
+            />
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default PotentialSection;
