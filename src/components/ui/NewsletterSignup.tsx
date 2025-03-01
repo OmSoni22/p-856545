@@ -38,22 +38,22 @@ const NewsletterSignup: React.FC = () => {
   }
 
   return (
-    <div className="w-full max-w-md mx-auto">
-      <h3 className="text-xl font-semibold mb-4">
+    <div className="w-full max-w-md mx-auto p-6 bg-white rounded-lg shadow-sm border border-gray-100 scale-in">
+      <h3 className="text-xl font-semibold mb-4 slide-in-bottom">
         Subscribe to Our Newsletter
       </h3>
-      <p className="text-[rgba(119,117,120,1)] mb-6">
+      <p className="text-[rgba(119,117,120,1)] mb-6 slide-in-bottom" style={{animationDelay: "0.1s"}}>
         Stay updated with the latest in AI and Python backend development
       </p>
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="flex gap-2">
+        <form onSubmit={form.handleSubmit(onSubmit)} className="flex gap-2 slide-in-bottom" style={{animationDelay: "0.2s"}}>
           <FormField
             control={form.control}
             name="email"
             render={({ field }) => (
               <FormItem className="flex-1">
                 <FormControl>
-                  <Input placeholder="Your email address" {...field} />
+                  <Input placeholder="Your email address" {...field} className="focus:ring-2 focus:ring-yellow-300 transition-shadow" />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -62,7 +62,7 @@ const NewsletterSignup: React.FC = () => {
           <Button
             type="submit"
             variant="primary"
-            className="bg-[#FFDE57] text-[#6A4D26] hover:bg-[#FFD315]"
+            className="bg-[#FFDE57] text-[#6A4D26] hover:bg-[#FFD315] hover-scale"
           >
             Subscribe
           </Button>

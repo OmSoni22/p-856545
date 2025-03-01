@@ -46,18 +46,18 @@ const ContactForm: React.FC = () => {
   }
 
   return (
-    <div className="w-full max-w-md mx-auto p-6 bg-white rounded-lg shadow-sm border border-gray-100">
-      <h3 className="text-2xl font-semibold mb-6 text-center">Contact Us</h3>
+    <div className="w-full max-w-md mx-auto p-6 bg-white rounded-lg shadow-md border border-gray-100 scale-in">
+      <h3 className="text-2xl font-semibold mb-6 text-center fade-in">Contact Us</h3>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
           <FormField
             control={form.control}
             name="name"
             render={({ field }) => (
-              <FormItem>
+              <FormItem className="slide-in-left" style={{animationDelay: "0.1s"}}>
                 <FormLabel>Name</FormLabel>
                 <FormControl>
-                  <Input placeholder="Your name" {...field} />
+                  <Input placeholder="Your name" {...field} className="focus:ring-2 focus:ring-yellow-300 transition-shadow" />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -67,10 +67,10 @@ const ContactForm: React.FC = () => {
             control={form.control}
             name="email"
             render={({ field }) => (
-              <FormItem>
+              <FormItem className="slide-in-left" style={{animationDelay: "0.2s"}}>
                 <FormLabel>Email</FormLabel>
                 <FormControl>
-                  <Input placeholder="your.email@example.com" {...field} />
+                  <Input placeholder="your.email@example.com" {...field} className="focus:ring-2 focus:ring-yellow-300 transition-shadow" />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -80,13 +80,14 @@ const ContactForm: React.FC = () => {
             control={form.control}
             name="message"
             render={({ field }) => (
-              <FormItem>
+              <FormItem className="slide-in-left" style={{animationDelay: "0.3s"}}>
                 <FormLabel>Message</FormLabel>
                 <FormControl>
                   <Textarea
                     placeholder="How can we help you?"
                     {...field}
                     rows={4}
+                    className="focus:ring-2 focus:ring-yellow-300 transition-shadow resize-none"
                   />
                 </FormControl>
                 <FormMessage />
@@ -96,7 +97,8 @@ const ContactForm: React.FC = () => {
           <Button
             type="submit"
             variant="primary"
-            className="w-full bg-[#FFDE57] text-[#6A4D26] hover:bg-[#FFD315]"
+            className="w-full bg-[#FFDE57] text-[#6A4D26] hover:bg-[#FFD315] hover-scale slide-in-bottom"
+            style={{animationDelay: "0.4s"}}
           >
             Send Message
           </Button>

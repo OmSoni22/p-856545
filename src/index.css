@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -97,5 +98,122 @@
 
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+/* Animation Classes */
+@layer utilities {
+  /* Fade In animations */
+  .fade-in {
+    @apply animate-[fadeIn_0.6s_ease-in-out];
+  }
+  
+  .slide-in-bottom {
+    @apply animate-[slideInBottom_0.5s_ease-out];
+  }
+  
+  .slide-in-left {
+    @apply animate-[slideInLeft_0.5s_ease-out];
+  }
+  
+  .slide-in-right {
+    @apply animate-[slideInRight_0.5s_ease-out];
+  }
+  
+  .scale-in {
+    @apply animate-[scaleIn_0.4s_cubic-bezier(0.175,0.885,0.32,1.275)];
+  }
+  
+  .pop-in {
+    @apply animate-[popIn_0.5s_cubic-bezier(0.175,0.885,0.32,1.275)];
+  }
+  
+  .hover-lift {
+    @apply transition-transform duration-300 hover:-translate-y-1 hover:shadow-lg;
+  }
+  
+  .hover-scale {
+    @apply transition-transform duration-300 hover:scale-105;
+  }
+  
+  .pulse {
+    @apply animate-[pulse_2s_cubic-bezier(0.4,0,0.6,1)_infinite];
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInBottom {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes popIn {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  70% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
   }
 }
