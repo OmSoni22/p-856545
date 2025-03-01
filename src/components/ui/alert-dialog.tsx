@@ -1,3 +1,4 @@
+
 import * as React from "react"
 import * as AlertDialogPrimitive from "@radix-ui/react-alert-dialog"
 
@@ -84,32 +85,27 @@ const AlertDialogDescription = React.forwardRef<
 AlertDialogDescription.displayName =
   AlertDialogPrimitive.Description.displayName
 
+// Fix type errors with Button props
 const AlertDialogAction = React.forwardRef<
-  React.ElementRef<typeof Button>,
+  HTMLButtonElement,
   React.ComponentPropsWithoutRef<typeof Button>
 >(({ className, ...props }, ref) => (
   <Button
-    ref={ref}
-    className={cn(
-      "sm:w-auto",
-      className
-    )}
+    className={cn("sm:w-auto", className)}
+    variant="primary"
     {...props}
   />
 ))
 AlertDialogAction.displayName = "AlertDialogAction"
 
+// Fix type errors with Button props and variant
 const AlertDialogCancel = React.forwardRef<
-  React.ElementRef<typeof Button>,
+  HTMLButtonElement,
   React.ComponentPropsWithoutRef<typeof Button>
 >(({ className, ...props }, ref) => (
   <Button
-    variant="ghost"
-    ref={ref}
-    className={cn(
-      "mt-2 sm:mt-0 sm:w-auto",
-      className
-    )}
+    variant="primary"
+    className={cn("mt-2 sm:mt-0 sm:w-auto", className)}
     {...props}
   />
 ))

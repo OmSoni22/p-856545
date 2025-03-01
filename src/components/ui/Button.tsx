@@ -2,20 +2,20 @@
 import React from "react";
 import { cn } from "@/lib/utils";
 
-type ButtonVariant = "primary" | "secondary" | "yellow" | "black";
+export type ButtonVariant = "primary" | "secondary" | "yellow" | "black";
 
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: ButtonVariant;
   children: React.ReactNode;
   className?: string;
 }
 
-const Button: React.FC<ButtonProps> = ({
+const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(({
   variant = "primary",
   children,
   className,
   ...props
-}) => {
+}, ref) => {
   const baseStyles = "text-center font-semibold transition-all duration-300 relative overflow-hidden";
 
   const variantStyles = {
@@ -27,12 +27,15 @@ const Button: React.FC<ButtonProps> = ({
 
   return (
     <button
+      ref={ref}
       className={cn(baseStyles, variantStyles[variant], className)}
       {...props}
     >
       <span className="relative z-10">{children}</span>
     </button>
   );
-};
+});
+
+Button.displayName = "Button";
 
 export default Button;
