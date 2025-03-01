@@ -1,9 +1,7 @@
 import React from "react";
 import Button from "../ui/Button";
-
 const JourneySection: React.FC = () => {
-  return (
-    <section className="bg-white flex w-[1299px] max-w-full flex-col pt-[107px] pb-[174px] px-[70px] max-md:pl-5 max-md:py-[100px]">
+  return <section className="bg-white flex w-[1299px] max-w-full flex-col pt-[107px] pb-[174px] px-[70px] max-md:pl-5 max-md:py-[100px]">
       <div className="mb-[-35px] w-full max-w-[1176px] max-md:max-w-full max-md:mb-2.5">
         <div className="gap-5 flex max-md:flex-col max-md:items-stretch">
           <div className="w-6/12 max-md:w-full max-md:ml-0">
@@ -25,25 +23,16 @@ const JourneySection: React.FC = () => {
               <div className="text-[rgba(130,128,131,1)] text-lg font-medium leading-10 mt-[30px]">
                 Discover the Transformative Power of AI and Python
               </div>
-              <Button
-                variant="black"
-                className="mt-[66px] pt-3 pb-[25px] px-[38px] rounded-[51px] max-md:mt-10 max-md:px-5"
-              >
+              <Button variant="black" className="mt-[66px] pt-3 pb-[25px] px-[38px] rounded-[51px] max-md:mt-10 max-md:px-5 py-[10px]">
                 Join Now
               </Button>
             </div>
           </div>
           <div className="w-6/12 ml-5 max-md:w-full max-md:ml-0">
-            <img
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/b1027d31895c4d9e4d4534d08e7a93c4bdc97417d25718f198537874baca85e8?placeholderIfAbsent=true"
-              alt="Journey of Innovation"
-              className="aspect-[0.84] object-contain w-full grow rounded-[51px] max-md:max-w-full max-md:mt-10"
-            />
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/b1027d31895c4d9e4d4534d08e7a93c4bdc97417d25718f198537874baca85e8?placeholderIfAbsent=true" alt="Journey of Innovation" className="aspect-[0.84] object-contain w-full grow rounded-[51px] max-md:max-w-full max-md:mt-10" />
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default JourneySection;
