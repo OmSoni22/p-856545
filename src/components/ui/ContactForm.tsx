@@ -1,8 +1,9 @@
+
 import React from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { Button } from "@/components/ui/button";
+import Button from "@/components/ui/Button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import {
@@ -94,6 +95,7 @@ const ContactForm: React.FC = () => {
           />
           <Button
             type="submit"
+            variant="primary"
             className="w-full bg-[#FFDE57] text-[#6A4D26] hover:bg-[#FFD315]"
           >
             Send Message
