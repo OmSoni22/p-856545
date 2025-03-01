@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "../ui/Button";
 const HeroSection: React.FC = () => {
-  return <section className="bg-white flex mt-[-70px] w-full max-w-[1373px] flex-col items-stretch justify-center px-[116px] py-[100px] max-md:max-w-full max-md:px-5">
+  return <section className="bg-white flex mt-[-70px] w-full max-w-[1373px] flex-col items-stretch justify-center max-md:max-w-full py-[100px] px-[110px] my-0 mx-[110px]">
       <div className="w-full max-md:max-w-full">
         <div className="gap-8 flex max-md:flex-col max-md:items-stretch">
           <div className="w-6/12 max-md:w-full max-md:ml-0">
