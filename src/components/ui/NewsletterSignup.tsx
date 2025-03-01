@@ -1,88 +1,32 @@
-
 import React from "react";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
+import { cn } from "@/lib/utils";
 import Button from "@/components/ui/Button";
-import { Input } from "@/components/ui/input";
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormMessage,
-} from "@/components/ui/form";
-import { toast } from "@/components/ui/use-toast";
 
-const formSchema = z.object({
-  email: z.string().email({
-    message: "Please enter a valid email address.",
-  }),
-});
+interface NewsletterSignupProps {
+  className?: string;
+}
 
-type FormValues = z.infer<typeof formSchema>;
-
-const NewsletterSignup: React.FC = () => {
-  const form = useForm<FormValues>({
-    resolver: zodResolver(formSchema),
-    defaultValues: {
-      email: "",
-    },
-  });
-
-  function onSubmit(data: FormValues) {
-    toast({
-      title: "Newsletter subscription successful",
-      description: "Thank you for subscribing to our newsletter!",
-    });
-    console.log(data);
-    form.reset();
-  }
-
+const NewsletterSignup: React.FC<NewsletterSignupProps> = ({ className }) => {
   return (
-    <div className="w-full max-w-md mx-auto p-6 bg-white rounded-lg shadow-sm border border-gray-100 scale-in">
-      <h3 className="text-xl font-semibold mb-4 slide-in-bottom">
-        Subscribe to Our Newsletter
+    <div className={cn("bg-[rgba(255,222,87,0.2)] rounded-[53px] p-6 sm:p-8 md:p-10 flex flex-col items-stretch", className)}>
+      <h3 className="text-2xl sm:text-3xl font-semibold text-center text-[rgba(41,39,40,1)] mb-4 fade-in">
+        Stay up to date
       </h3>
-      <p 
-        className="text-[rgba(119,117,120,1)] mb-6 slide-in-bottom" 
-        style={{ animationDelay: "0.1s" }}
-      >
-        Stay updated with the latest in AI and Python backend development
+      <p className="text-base text-center text-[rgba(119,117,120,1)] font-medium leading-relaxed mb-6 fade-in" style={{animationDelay: "0.1s"}}>
+        Subscribe to our newsletter and never miss the latest news, articles,
+        and resources
       </p>
-      <Form {...form}>
-        <form 
-          onSubmit={form.handleSubmit(onSubmit)} 
-          className="flex gap-2 slide-in-bottom" 
-          style={{ animationDelay: "0.2s" }}
-        >
-          <FormField
-            control={form.control}
-            name="email"
-            render={({ field }) => (
-              <FormItem className="flex-1">
-                <FormControl>
-                  <Input 
-                    placeholder="Your email address" 
-                    className="focus:ring-2 focus:ring-yellow-300 transition-shadow py-0 px-0 my-0"
-                    {...field}
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <Button 
-            type="submit" 
-            variant="primary" 
-            className="bg-[#FFDE57] text-[#6A4D26] hover:bg-[#FFD315] hover-scale py-[3px] px-[16px]"
-          >
-            Subscribe
-          </Button>
-        </form>
-      </Form>
+      <div className="flex flex-col sm:flex-row items-stretch gap-4 fade-in" style={{animationDelay: "0.2s"}}>
+        <input
+          type="email"
+          placeholder="Enter your email"
+          className="bg-white rounded-[33px] py-3 px-6 text-base text-[rgba(119,117,120,1)] font-normal flex-grow"
+        />
+        <Button variant="secondary" className="hover-scale">Subscribe</Button>
+      </div>
     </div>
   );
 };
 
 export default NewsletterSignup;
+

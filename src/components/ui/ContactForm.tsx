@@ -1,123 +1,58 @@
-
 import React from "react";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
+import { cn } from "@/lib/utils";
 import Button from "@/components/ui/Button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
-import { toast } from "@/components/ui/use-toast";
 
-const formSchema = z.object({
-  name: z.string().min(2, { message: "Name must be at least 2 characters." }),
-  email: z.string().email({ message: "Please enter a valid email address." }),
-  message: z
-    .string()
-    .min(10, { message: "Message must be at least 10 characters." }),
-});
+interface ContactFormProps extends React.HTMLAttributes<HTMLFormElement> {}
 
-type FormValues = z.infer<typeof formSchema>;
-
-const ContactForm: React.FC = () => {
-  const form = useForm<FormValues>({
-    resolver: zodResolver(formSchema),
-    defaultValues: {
-      name: "",
-      email: "",
-      message: "",
-    },
-  });
-
-  function onSubmit(data: FormValues) {
-    toast({
-      title: "Form submitted",
-      description: "We'll get back to you soon!",
-    });
-    console.log(data);
-    form.reset();
-  }
-
+const ContactForm: React.FC<ContactFormProps> = ({ className, ...props }) => {
   return (
-    <div className="w-full max-w-md mx-auto p-6 bg-white rounded-lg shadow-sm border border-gray-100 scale-in">
-      <h3 className="text-2xl font-semibold mb-6 text-center slide-in-bottom">
-        Contact Us
-      </h3>
-      <Form {...form}>
-        <form 
-          onSubmit={form.handleSubmit(onSubmit)} 
-          className="space-y-6"
+    <form className={cn("grid grid-cols-1 gap-6", className)} {...props}>
+      <div>
+        <label
+          htmlFor="name"
+          className="block text-sm font-medium text-[rgba(51,51,51,1)]"
         >
-          <FormField
-            control={form.control}
-            name="name"
-            render={({ field }) => (
-              <FormItem className="slide-in-bottom" style={{ animationDelay: "0.1s" }}>
-                <FormLabel>Name</FormLabel>
-                <FormControl>
-                  <Input 
-                    placeholder="Your name" 
-                    className="focus:ring-2 focus:ring-yellow-300 transition-shadow"
-                    {...field} 
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name="email"
-            render={({ field }) => (
-              <FormItem className="slide-in-bottom" style={{ animationDelay: "0.2s" }}>
-                <FormLabel>Email</FormLabel>
-                <FormControl>
-                  <Input 
-                    placeholder="your.email@example.com" 
-                    className="focus:ring-2 focus:ring-yellow-300 transition-shadow"
-                    {...field} 
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name="message"
-            render={({ field }) => (
-              <FormItem className="slide-in-bottom" style={{ animationDelay: "0.3s" }}>
-                <FormLabel>Message</FormLabel>
-                <FormControl>
-                  <Textarea
-                    placeholder="How can we help you?"
-                    className="focus:ring-2 focus:ring-yellow-300 transition-shadow"
-                    rows={4}
-                    {...field}
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <Button
-            type="submit"
-            variant="primary"
-            className="w-full hover-scale slide-in-bottom"
-            style={{ animationDelay: "0.4s" }}
-          >
-            Send Message
-          </Button>
-        </form>
-      </Form>
-    </div>
+          Your Name
+        </label>
+        <input
+          type="text"
+          id="name"
+          className="mt-1 p-2 w-full border rounded-md shadow-sm focus:ring focus:ring-opacity-50 focus:border-primary-500 focus:ring-primary-500"
+          placeholder="John Doe"
+        />
+      </div>
+      <div>
+        <label
+          htmlFor="email"
+          className="block text-sm font-medium text-[rgba(51,51,51,1)]"
+        >
+          Your Email
+        </label>
+        <input
+          type="email"
+          id="email"
+          className="mt-1 p-2 w-full border rounded-md shadow-sm focus:ring focus:ring-opacity-50 focus:border-primary-500 focus:ring-primary-500"
+          placeholder="john.doe@example.com"
+        />
+      </div>
+      <div>
+        <label
+          htmlFor="message"
+          className="block text-sm font-medium text-[rgba(51,51,51,1)]"
+        >
+          Message
+        </label>
+        <textarea
+          id="message"
+          rows={4}
+          className="mt-1 p-2 w-full border rounded-md shadow-sm focus:ring focus:ring-opacity-50 focus:border-primary-500 focus:ring-primary-500"
+          placeholder="Your message here..."
+        ></textarea>
+      </div>
+      <Button variant="secondary" className="w-full">
+        Send Message
+      </Button>
+    </form>
   );
 };
 
